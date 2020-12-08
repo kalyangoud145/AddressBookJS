@@ -177,3 +177,13 @@ function viewContactWithState(firstName, lastName, state) {
 }
 console.log(viewContactWithCity("Kalyan", "Goud", "nalgonda"));
 console.log(viewContactWithState("Ugendher", "Goud", "Telangana"));
+// UC10 Get Number of contacts by city or state
+console.log("\nUC10");
+function GetCountByCity(city) {
+    return contacts.filter(obj => obj.city == city).reduce((countOfContact, obj) => countOfContact += 1, 0);
+}
+function GetCountByState(state) {
+    return contacts.filter(obj => obj.state == state).reduce((countOfContact, obj) => countOfContact += 1, 0);
+}
+console.log("Number of contacts belonging to  city: " + GetCountByCity("nalgonda"));
+console.log("Number of contacts belonging to state: " + GetCountByState("Telangana"));
