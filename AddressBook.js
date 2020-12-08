@@ -106,3 +106,24 @@ function AddContact(firstName, lastName, address, city, state, zip, phoneNumber,
 AddContact('Kalyan', 'Goud', 'VTcolony', 'nalgonda', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
 AddContact('Anirudh', 'Repala', 'Padmavathicolony', 'Hyderabad', 'Telanagana', '507002', '91 9950647660', 'repalaanirudh@gmail.com');
 console.log(contacts.toString());
+// UC4
+// Edit existing contact
+function GetContactIndexWithName(firstName, lastName) {
+    for (let i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName == firstName && contacts[i].lastName == lastName) {
+            return i;
+        }
+    }
+    return -1;
+}
+let indexOfContact = GetContactIndexWithName('Anirudh', 'Repala');
+if (indexOfContact != -1) {
+    console.log('Contacts before update operation: ');
+    console.log(contacts.toString());
+    contacts[indexOfContact].firstName = 'Virat';
+    contacts[indexOfContact].lastName = 'Kohli';
+    contacts[indexOfContact].city = 'hyderabad';
+    console.log('Contacts after update operation: ');
+    console.log(contacts.toString());
+}
+else console.log("Contact not found");
