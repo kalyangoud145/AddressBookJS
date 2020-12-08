@@ -142,7 +142,7 @@ else console.log("contact not found for deletion");
 // UC 6 Count number of contacts
 let count = contacts.reduce(((count) => { count += 1; return count; }), 0);
 console.log("Count number of contacts is: " + count);
-AddContact('Ugendher', 'Goud', 'VTcolony', 'Nizampet', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
+AddContact('Ugendher', 'Goud', 'VTcolony', 'Nizampet', 'Kerala', '508050', '91 7732063720', 'kalyangoud145@gmail.com');
 // UC8 Check if a person with given name and city or state exist or not and print it
 // Return true if found else return false
 console.log("\nUC8\n");
@@ -195,3 +195,28 @@ function sortByPersonName() {
     sortedArray.forEach(person => console.log(person.toString()));
 }
 sortByPersonName();
+// UC 12
+// Sort by city
+function sortByCity() {
+    let sortedArray = contacts;
+    sortedArray.sort((a, b) => a.city.toLowerCase().localeCompare(b.city.toLowerCase()));
+    console.log("\n\nPrinting sorted array by city : ");
+    sortedArray.forEach(p => console.log("\n" + p.toString()));
+}
+sortByCity();
+// Sort by zip
+function sortByZip() {
+    let sortedArray = contacts;
+    sortedArray.sort((a, b) => a.zip.toLowerCase().localeCompare(b.zip.toLowerCase()));
+    console.log("\n\nPrinting sorted array by zip : ");
+    sortedArray.forEach(p => console.log("\n" + p.toString()));
+}
+sortByZip();
+// Sort by person name
+function sortByState() {
+    let sortedArray = contacts;
+    sortedArray.sort((a, b) => a.state.toLowerCase().localeCompare(b.state.toLowerCase()));
+    console.log("\n\nPrinting sorted array by State : ");
+    sortedArray.forEach(p => console.log("\n" + p.toString()));
+}
+sortByState();
