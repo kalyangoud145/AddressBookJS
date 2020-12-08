@@ -179,11 +179,19 @@ console.log(viewContactWithCity("Kalyan", "Goud", "nalgonda"));
 console.log(viewContactWithState("Ugendher", "Goud", "Telangana"));
 // UC10 Get Number of contacts by city or state
 console.log("\nUC10");
-function GetCountByCity(city) {
+function getCountByCity(city) {
     return contacts.filter(obj => obj.city == city).reduce((countOfContact, obj) => countOfContact += 1, 0);
 }
-function GetCountByState(state) {
+function getCountByState(state) {
     return contacts.filter(obj => obj.state == state).reduce((countOfContact, obj) => countOfContact += 1, 0);
 }
-console.log("Number of contacts belonging to  city: " + GetCountByCity("nalgonda"));
-console.log("Number of contacts belonging to state: " + GetCountByState("Telangana"));
+console.log("Number of contacts belonging to  city: " + getCountByCity("nalgonda"));
+console.log("Number of contacts belonging to state: " + getCountByState("Telangana"));
+// UC 11 Sort by contact by person name
+function sortByPersonName() {
+    let sortedArray = contacts;
+    sortedArray.sort((a, b) => a.firstName.toLowerCase().localeCompare(b.firstName.toLowerCase()));
+    console.log("\n\Printing sorted array by person name : ");
+    sortedArray.forEach(person => console.log(person.toString()));
+}
+sortByPersonName();
