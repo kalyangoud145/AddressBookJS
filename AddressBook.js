@@ -127,3 +127,10 @@ if (indexOfContact != -1) {
     console.log(contacts.toString());
 }
 else console.log("Contact not found");
+// UC 5 Delete existing contact
+var index = contacts.indexOf(contacts.filter(p => p.firstName == "Virat" && p.lastName == "Kohli")[0]);
+if (index != -1) {
+    contacts.splice(index, 1);
+    console.log("UC 5 Delete existing contact" + contacts.toString());
+}
+else console.log("contact not found for deletion");
