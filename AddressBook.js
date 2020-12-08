@@ -142,4 +142,25 @@ else console.log("contact not found for deletion");
 // UC 6 Count number of contacts
 let count = contacts.reduce(((count) => { count += 1; return count; }), 0);
 console.log("Count number of contacts is: " + count);
-AddContact('Ugendher', 'Goud', 'VTcolony', 'nalgonda', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
+AddContact('Ugendher', 'Goud', 'VTcolony', 'Nizampet', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
+// UC8 Check if a person with given name and city or state exist or not and print it
+// Return true if found else return false
+console.log("\nUC8\n");
+function CheckNameWithCity(firstName, lastName, city) {
+    if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.city == city)) {
+        console.log("Contact found: " +
+            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString());
+        return true;
+    }
+    return false;
+}
+function CheckNameWithState(firstName, lastName, state) {
+    if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.state == state)) {
+        console.log("Contact found: " +
+            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString());
+        return true;
+    }
+    return false;
+}
+console.log(CheckNameWithCity("Kalyan", "Goud", "nalgonda"));
+console.log(CheckNameWithState("Ugendher", "Goud", "Telangana"));
