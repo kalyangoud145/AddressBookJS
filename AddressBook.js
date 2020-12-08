@@ -92,4 +92,17 @@ class Contact {
             throw 'Invalid email-id';
         }
     }
+    toString() {
+        return "\nfirstname = " + this.firstName + ", lastName = " + this.lastName + ", address = " + this.address
+            + ", city = " + this.city + ", state = " + this.state + ", zip = " + this.zip + ", email = " + this.email;
+    }
 }
+console.log("\nUC3-- Adding new contact");
+let contacts = new Array();
+function AddContact(firstName, lastName, address, city, state, zip, phoneNumber, email) {
+    let contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+    contacts.push(contact);
+}
+AddContact('Kalyan', 'Goud', 'VTcolony', 'nalgonda', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
+AddContact('Anirudh', 'Repala', 'Padmavathicolony', 'Hyderabad', 'Telanagana', '507002', '91 9950647660', 'repalaanirudh@gmail.com');
+console.log(contacts.toString());
