@@ -146,21 +146,34 @@ AddContact('Ugendher', 'Goud', 'VTcolony', 'Nizampet', 'Telangana', '508001', '9
 // UC8 Check if a person with given name and city or state exist or not and print it
 // Return true if found else return false
 console.log("\nUC8\n");
-function CheckNameWithCity(firstName, lastName, city) {
+function searchContactWithCity(firstName, lastName, city) {
     if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.city == city)) {
-        console.log("Contact found: " +
-            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString());
         return true;
     }
     return false;
 }
-function CheckNameWithState(firstName, lastName, state) {
+function searchContactWithState(firstName, lastName, state) {
     if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.state == state)) {
-        console.log("Contact found: " +
-            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString());
         return true;
     }
     return false;
 }
-console.log(CheckNameWithCity("Kalyan", "Goud", "nalgonda"));
-console.log(CheckNameWithState("Ugendher", "Goud", "Telangana"));
+console.log(searchContactWithCity("Kalyan", "Goud", "nalgonda"));
+console.log(searchContactWithState("Ugendher", "Goud", "Telangana"));
+// UC9 View Person By City or State
+function viewContactWithCity(firstName, lastName, city) {
+    if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.city == city)) {
+        return "Contact found: " +
+            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString();
+    }
+    return false;
+}
+function viewContactWithState(firstName, lastName, state) {
+    if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName && obj.state == state)) {
+        return "Contact found: " +
+            contacts.filter(p => p.firstName == firstName && p.lastName == lastName)[0].toString();
+    }
+    return false;
+}
+console.log(viewContactWithCity("Kalyan", "Goud", "nalgonda"));
+console.log(viewContactWithState("Ugendher", "Goud", "Telangana"));
