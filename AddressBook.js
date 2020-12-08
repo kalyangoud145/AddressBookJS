@@ -100,6 +100,11 @@ class Contact {
 console.log("\nUC3-- Adding new contact");
 let contacts = new Array();
 function AddContact(firstName, lastName, address, city, state, zip, phoneNumber, email) {
+    // UC 7 Count number of contacts
+    if (contacts.some(obj => obj.firstName == firstName && obj.lastName == lastName)) {
+        console.log("Contact with firstName: " + firstName + " and lastName: " + lastName + " already exist!");
+        return;
+    }
     let contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
     contacts.push(contact);
 }
@@ -137,3 +142,4 @@ else console.log("contact not found for deletion");
 // UC 6 Count number of contacts
 let count = contacts.reduce(((count) => { count += 1; return count; }), 0);
 console.log("Count number of contacts is: " + count);
+AddContact('Ugendher', 'Goud', 'VTcolony', 'nalgonda', 'Telangana', '508001', '91 7732063720', 'kalyangoud145@gmail.com');
