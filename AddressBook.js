@@ -134,3 +134,6 @@ if (index != -1) {
     console.log("UC 5 Delete existing contact" + contacts.toString());
 }
 else console.log("contact not found for deletion");
+// UC 6 Count number of contacts
+let count = contacts.reduce(((count) => { count += 1; return count; }), 0);
+console.log("Count number of contacts is: " + count);
